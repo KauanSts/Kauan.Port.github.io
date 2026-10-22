@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kauan Marcondes | Portfólio em TI, Redes e Suporte Técnico</title>
+<meta name="description" content="Portfólio de Kauan Marcondes, estudante de Análise e Desenvolvimento de Sistemas com experiência em suporte técnico e redes. Projetos, habilidades e contato.">
+<meta name="author" content="Kauan Marcondes">
+<meta name="theme-color" content="#1c1e21">
+<meta property="og:title" content="Kauan Marcondes | Portfólio em TI">
+<meta property="og:description" content="Estudante de ADS com experiência em suporte técnico e redes.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231c1e21'/><path d='M20 22l-10 10 10 10M44 22l10 10-10 10M36 16l-8 32' fill='none' stroke='%23fb923c' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/></svg>
+" type="image/svg+xml">
+<style>
+/* Paleta: edite as variáveis abaixo para mudar as cores do site */
+:root{--bg:#1c1e21;--bg2:#25282c;--card:#2b2f34;--line:#434a52;--ciano:#fb923c;--txt:#f3f4f6;--mut:#aab2bb;--r:12px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--txt);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--ciano)}h1,h2,h3{line-height:1.2;margin:0 0 .6rem}
+h1{font-size:clamp(2.2rem,6vw,3.8rem);letter-spacing:-.02em}h2{font-size:clamp(1.6rem,3.5vw,2.2rem)}h3{font-size:1.1rem}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}section{padding:72px 0}.alt{background:var(--bg2)}
+:focus-visible{outline:3px solid var(--ciano);outline-offset:3px}
+.skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;background:var(--ciano);color:#041018;padding:8px 12px;z-index:99}
+header{position:sticky;top:0;z-index:10;background:rgba(28,30,33,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:700;color:var(--txt);text-decoration:none}.logo b{color:var(--ciano)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}nav a{color:var(--mut);text-decoration:none;font-size:.95rem}nav a:hover{color:var(--ciano)}
+#menu-bt{display:none;background:none;border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:6px 12px;font:inherit}
+.hero{padding:90px 0 70px}.hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.hero p.sub{color:var(--mut);font-size:1.15rem;max-width:34em}.hero .nome{color:var(--ciano);font-weight:600;margin-bottom:.8rem}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid var(--ciano);transition:transform .2s,background .2s,color .2s}
+.btn-pri{background:var(--ciano);color:#041018}.btn-pri:hover{transform:translateY(-2px);background:#fdba74}
+.btn-sec{color:var(--ciano);background:transparent}.btn-sec:hover{background:rgba(251,146,60,.14);transform:translateY(-2px)}
+.btn.off{opacity:.45;border-style:dashed;cursor:not-allowed}.btn.off:hover{transform:none;background:transparent}.sm{padding:7px 14px;font-size:.9rem;margin-top:auto}
+.ico{width:18px;height:18px}
+.terminal{background:#141618;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.terminal .bar{background:#1f2225;padding:9px 14px;display:flex;gap:7px}.bar i{width:11px;height:11px;border-radius:50%;background:var(--line)}
+#term{margin:0;padding:18px;min-height:230px;font:14px/1.7 ui-monospace,Consolas,monospace;color:#fdba74;white-space:pre-wrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:30px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:border-color .2s,transform .2s;display:flex;flex-direction:column}
+.card:hover{border-color:var(--ciano);transform:translateY(-3px)}
+.skills,.bul,.cursos{margin:0;padding:0;list-style:none}.skills li{padding:6px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center}.skills li:last-child{border:0}
+.tag{font-size:.75rem;padding:2px 10px;border-radius:999px;white-space:nowrap;border:1px solid}
+.learn{color:#fcd34d;border-color:#fcd34d55}.dev{color:#fcd34d;border-color:#fcd34d55}.done{color:#4ade80;border-color:#4ade8055}
+.proj-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.proj-ico{font-size:2rem}.proj p{color:var(--mut);margin:.2rem 0 1rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0 0 18px;padding:0}.chips li{font-size:.8rem;background:rgba(251,146,60,.12);color:var(--ciano);padding:2px 10px;border-radius:6px}
+.tl-item{border-left:2px solid var(--ciano);padding:0 0 26px 22px}.muted{color:var(--mut);font-size:.95rem}
+.bul li{padding-left:18px;position:relative;margin:4px 0}.bul li:before{content:"›";position:absolute;left:0;color:var(--ciano)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:30px}
+#transf{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}#transf li{background:var(--card);border-radius:var(--r);padding:14px 16px}#transf span{display:block;color:var(--mut);font-size:.9rem}
+.cursos li,#certs li{margin-bottom:14px}.lead{max-width:44em;color:#d5e1ee}
+footer{padding:28px 0;text-align:center;color:var(--mut);border-top:1px solid var(--line);font-size:.9rem}
+@media(max-width:800px){.hero .wrap,.two{grid-template-columns:1fr}#menu-bt{display:block}
+ nav ul{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--bg);padding:16px 20px;border-bottom:1px solid var(--line);gap:12px}nav.open ul{display:flex}section{padding:52px 0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+<header><div class="wrap">
+  <a class="logo" href="#inicio">&lt;<b>KM</b>/&gt;</a>
+  <button id="menu-bt" aria-expanded="false" aria-controls="menu">Menu</button>
+  <nav id="menu" aria-label="Principal"><ul>
+    <li><a href="#sobre">Sobre</a></li><li><a href="#habilidades">Habilidades</a></li><li><a href="#projetos">Projetos</a></li>
+    <li><a href="#experiencia">Experiência</a></li><li><a href="#formacao">Formação</a></li><li><a href="#contato">Contato</a></li>
+  </ul></nav>
+</div></header>
+<main id="conteudo">
+<section class="hero" id="inicio"><div class="wrap">
+  <div>
+    <p class="nome">Kauan Marcondes</p>
+    <h1>Construindo meu futuro na tecnologia.</h1>
+    <p class="sub">Estudante de tecnologia, apaixonado por aprender, resolver problemas e desenvolver soluções. Compartilho aqui meus projetos, conhecimentos e minha evolução profissional.</p>
+    <div class="acoes" id="hero-botoes"></div>
+  </div>
+  <div class="terminal" aria-hidden="true"><div class="bar"><i></i><i></i><i></i></div><pre id="term"></pre></div>
+</div></section>
+
+<section id="sobre" class="alt"><div class="wrap">
+  <h2>Sobre mim</h2>
+  <p class="lead">Sou estudante de Análise e Desenvolvimento de Sistemas na UMC e trabalho com suporte técnico desde 2024, primeiro como estagiário na Prefeitura de Itaquaquecetuba e depois como assistente técnico. No dia a dia, instalo e configuro equipamentos e sistemas, faço manutenção, atendo chamados e diagnostico problemas de hardware, software e rede.</p>
+  <p class="lead">Também tenho prática com cabeamento de rede e crimpagem de cabos, e conhecimentos de conectividade. Meus maiores interesses hoje são suporte técnico, infraestrutura, redes, Cloud Computing, bancos de dados e programação. Estou estudando essas áreas e construindo projetos para praticar e mostrar minha evolução.</p>
+  <p class="lead">Meu objetivo é conquistar uma oportunidade de estágio ou emprego em TI, onde eu possa contribuir com a minha experiência e continuar crescendo na carreira.</p>
+</div></section>
+
+<section id="habilidades"><div class="wrap"><h2>Habilidades</h2>
+  <p class="muted">O que já uso na prática e o que ainda estou aprendendo.</p><div class="grid" id="skills-grid"></div></div></section>
+
+<section id="projetos" class="alt"><div class="wrap"><h2>Projetos</h2>
+  <p class="muted">Projetos de estudo que estou desenvolvendo. O código será publicado no GitHub conforme eu concluir cada um.</p><div class="grid" id="projetos-grid"></div></div></section>
+
+<section id="experiencia"><div class="wrap"><h2>Experiência profissional</h2><div style="margin-top:26px" id="exp-lista"></div>
+  <h3 style="margin-top:20px">Habilidades que levo para a TI</h3><ul id="transf"></ul></div></section>
+
+<section id="formacao" class="alt"><div class="wrap"><h2>Formação e cursos</h2>
+  <div class="two"><div><h3>Graduação</h3><div id="formacao"></div><h3 style="margin-top:20px">Idiomas</h3><p>Inglês – intermediário</p></div>
+  <div><ul class="cursos" id="cursos"></ul><h3>Cursos e certificados</h3><ul class="cursos" id="certs"></ul></div></div></div></section>
+
+<section id="contato"><div class="wrap"><h2>Contato</h2>
+  <p class="lead">Telefone: (11)98467-6516<br>Email: Kauanmarcondes07@gmail.com</p><div class="acoes" id="contato-botoes"></div></div></section>
+</main>
+<footer><div class="wrap">© <span id="ano"></span> Kauan Marcondes · Itaquaquecetuba - SP</div></footer>
+<script>
+/* =====================================================
+   DADOS DO PORTFÓLIO — edite apenas este arquivo.
+   Campos com "" (vazio) não aparecem como link no site.
+   ===================================================== */
+const DADOS = {
+  nome: "Kauan Marcondes",
+  cidade: "Itaquaquecetuba - SP",
+
+  links: {
+    github: "https://github.com/KauanSts",
+    linkedin: "https://www.linkedin.com/in/kauan-marcondes-001987435/",
+    email: "kauanmarcondes07@gmail.com",
+    telefone: "(11) 98467-6516"
+  },
+
+  habilidades: [
+    { categoria: "Suporte técnico", itens: [
+      ["Hardware e software", "Pronto"], ["Instalação e configuração de sistemas", "Pronto"],
+      ["Manutenção preventiva e corretiva", "Pronto"], ["Documentação técnica", "Pronto"]] },
+    { categoria: "Redes", itens: [
+      ["Configuração básica de redes", "Pronto"], ["Diagnóstico de conectividade", "Pronto"],
+      ["Cabeamento e crimpagem", "Pronto"], ["TCP/IP, IPv4 e IPv6", "Em aprendizado"]] },
+    { categoria: "Cloud Computing", itens: [
+      ["Fundamentos de nuvem e infraestrutura", "Em aprendizado"]] },
+    { categoria: "Banco de dados", itens: [
+      ["SQL e consultas básicas", "Em aprendizado"]] },
+    { categoria: "Programação", itens: [
+      ["Lógica de programação", "Pronto"], ["Python (básico)", "Pronto"], ["Java (básico)", "Em aprendizado"]] },
+    { categoria: "Sistemas operacionais", itens: [
+      ["Windows", "Pronto"], ["Pacote Office", "Pronto"], ["Fundamentos de Linux", "Em aprendizado"]] }
+  ],
+
+  /* Para adicionar um projeto: copie um bloco, cole ao final da lista e edite.
+     status: "Em desenvolvimento" ou "Concluído". repo: link do GitHub ("" = botão desativado). */
+  projetos: [
+    { titulo: "Laboratório de Redes", icone: "🌐", status: "Em desenvolvimento", repo: "",
+      descricao: "Endereçamento IPv4 e IPv6, subnetting e diagnóstico de conectividade.", tecnologias: ["TCP/IP", "IPv4", "IPv6"] },
+    { titulo: "Central de Suporte de TI", icone: "🛠️", status: "Em desenvolvimento", repo: "",
+      descricao: "Simulação de chamados, documentação de incidentes e soluções.", tecnologias: ["Suporte", "Documentação"] },
+    { titulo: "Laboratório de Cloud Computing", icone: "☁️", status: "Em desenvolvimento", repo: "",
+      descricao: "Fundamentos de infraestrutura em nuvem e máquinas virtuais.", tecnologias: ["Cloud", "VMs"] },
+    { titulo: "Banco de Dados SQL", icone: "🗄️", status: "Em desenvolvimento", repo: "",
+      descricao: "Criação de tabelas, consultas, filtros e relacionamentos.", tecnologias: ["SQL"] },
+    { titulo: "Automação com Python", icone: "🐍", status: "Em desenvolvimento", repo: "",
+      descricao: "Scripts simples para automatizar tarefas do dia a dia.", tecnologias: ["Python"] },
+    { titulo: "Laboratório Linux", icone: "🐧", status: "Em desenvolvimento", repo: "",
+      descricao: "Comandos básicos, permissões e administração inicial do sistema.", tecnologias: ["Linux", "Terminal"] }
+  ],
+
+  experiencias: [
+    { cargo: "Assistente Técnico", local: "", periodo: "Janeiro de 2026 – Setembro de 2026", // local: nome da empresa (opcional)
+      itens: ["Suporte técnico a computadores e sistemas.", "Instalação e configuração de softwares e equipamentos.",
+              "Manutenção preventiva e corretiva.", "Diagnóstico e resolução de problemas técnicos.",
+              "Suporte a usuários e atendimento de chamados.", "Configuração de redes e conexão à internet."] },
+    { cargo: "Estágio", local: "Prefeitura de Itaquaquecetuba", periodo: "Janeiro de 2024 – Dezembro de 2025",
+      itens: ["Suporte técnico aos usuários.", "Instalação e configuração de computadores e periféricos.",
+              "Manutenção e configuração de equipamentos.", "Identificação e solução de problemas de hardware e software."] }
+  ],
+
+  transferiveis: [
+    ["Resolução de problemas", "Diagnóstico de falhas de hardware, software e rede."],
+    ["Atendimento", "Suporte direto a usuários e chamados."],
+    ["Organização", "Documentação técnica e rotinas administrativas."],
+    ["Responsabilidade", "Cuidado com equipamentos e prazos."],
+    ["Trabalho em equipe", "Atuação junto a equipes e usuários."]
+  ],
+
+  formacao: { curso: "Graduação em Análise e Desenvolvimento de Sistemas (bolsista)",
+              instituicao: "UMC – Universidade de Mogi das Cruzes", periodo: "Julho de 2026 – Julho de 2028 (previsão)" },
+
+  cursos: [], // (os cursos agora ficam em "certificacoes")
+  certificacoes: [ // Adicione só o que você possuir: { nome, emissor, desc }
+    { nome: "Inglês (3 anos)", emissor: "Wizard", desc: "Compreensão oral, leitura, escrita e conversação. Nível intermediário." },
+    { nome: "Operador de Computador (Pacote Office)", emissor: "Prepara Cursos", desc: "Informática, sistemas operacionais e ferramentas digitais." },
+    { nome: "Administração", emissor: "Liceu Brasil", desc: "Rotinas administrativas, gestão de documentos e atendimento." },
+    { nome: "Gestão de Qualidade", emissor: "Prepara Cursos", desc: "Melhoria de processos, controle de qualidade e padronização." }
+  ]
+};
+
+/* Monta as seções a partir de dados.js */
+const $ = (s) => document.querySelector(s);
+const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const D = DADOS, L = D.links;
+
+const icons = {
+  github: '<path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.600 1 2.7 0 3.900-2.400 4.700-4.600 5 .4.3.7.9.7 1.800v2.700c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/>',
+  linkedin: '<path d="M4.500 3A2.500 2.500 0 1 0 4.500 8 2.500 2.500 0 0 0 4.500 3zM2 9.500h5V22H2zM9.500 9.500h4.800v1.700h.1c.7-1.300 2.300-2 4-2 4.200 0 5 2.800 5 6.400V22h-5v-5.600c0-1.400 0-3.100-1.900-3.100s-2.200 1.500-2.200 3V22h-5z"/>',
+  email: '<path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.500 2L12 12.500 19.500 7z"/>',
+  phone: '<path d="M6.600 10.800a15 15 0 0 0 6.600 6.600l2.200-2.200a1 1 0 0 1 1-.25 11 11 0 0 0 3.500.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.500a1 1 0 0 1 1 1c0 1.200.2 2.400.56 3.500a1 1 0 0 1-.25 1z"/>'
+};
+const ico = (n) => `<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">${icons[n]}</svg>`;
+
+/* Botões de contato: link vazio => botão desativado (não inventa nada) */
+function botao(nome, rotulo, href, classe = "btn-sec") {
+  if (!href) return `<span class="btn ${classe} off" aria-disabled="true" title="Link ainda não configurado em js/dados.js">${ico(nome)}${rotulo}</span>`;
+  const ext = href.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : "";
+  return `<a class="btn ${classe}" href="${esc(href)}"${ext}>${ico(nome)}${rotulo}</a>`;
+}
+const mail = L.email ? "mailto:" + L.email : "";
+const tel = L.telefone ? "tel:+55" + L.telefone.replace(/\D/g, "") : "";
+
+$("#hero-botoes").innerHTML =
+  `<a class="btn btn-pri" href="#projetos">Ver projetos</a>` + botao("github", "GitHub", L.github) + botao("linkedin", "LinkedIn", L.linkedin);
+
+$("#skills-grid").innerHTML = D.habilidades.map((h) => `
+  <article class="card"><h3>${esc(h.categoria)}</h3><ul class="skills">
+  ${h.itens.map(([n, s]) => `<li>${esc(n)}${s === "Em aprendizado" ? '<span class="tag learn">Em aprendizado</span>' : ""}</li>`).join("")}
+  </ul></article>`).join("");
+
+$("#projetos-grid").innerHTML = D.projetos.map((p) => `
+  <article class="card proj"><div class="proj-top"><span class="proj-ico" aria-hidden="true">${p.icone}</span>
+  <span class="tag ${p.status === "Concluído" ? "done" : "dev"}">${esc(p.status)}</span></div>
+  <h3>${esc(p.titulo)}</h3><p>${esc(p.descricao)}</p>
+  <ul class="chips">${p.tecnologias.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
+  ${p.repo ? `<a class="btn btn-sec sm" href="${esc(p.repo)}" target="_blank" rel="noopener noreferrer">${ico("github")}Ver código</a>`
+           : `<span class="btn btn-sec sm off" aria-disabled="true">${ico("github")}Código em breve</span>`}
+  </article>`).join("");
+
+$("#exp-lista").innerHTML = D.experiencias.map((e) => `
+  <article class="tl-item"><h3>${esc(e.cargo)}${e.local ? " · " + esc(e.local) : ""}</h3>
+  <p class="muted">${esc(e.periodo)}</p><ul class="bul">${e.itens.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></article>`).join("");
+
+$("#transf").innerHTML = D.transferiveis.map(([t, d]) => `<li><strong>${esc(t)}</strong><span>${esc(d)}</span></li>`).join("");
+
+const f = D.formacao;
+$("#formacao").innerHTML = `<article class="tl-item"><h3>${esc(f.curso)}</h3><p>${esc(f.instituicao)}</p><p class="muted">${esc(f.periodo)}</p></article>`;
+$("#cursos").innerHTML = D.cursos.map((c) => `<li><strong>${esc(c.nome)}</strong> – ${esc(c.inst)}<br><span class="muted">${esc(c.desc)}</span></li>`).join("");
+$("#certs").innerHTML = D.certificacoes.length
+  ? D.certificacoes.map((c) => `<li><strong>${esc(c.nome)}</strong> – ${esc(c.emissor)} ${c.desc ? '<br><span class="muted">' + esc(c.desc) + '</span>' : ""}</li>`).join("")
+  : '<li class="muted">Certificações serão adicionadas conforme eu as concluir.</li>';
+
+$("#contato-botoes").innerHTML = botao("linkedin", "LinkedIn", L.linkedin) + botao("github", "GitHub", L.github) +
+  botao("email", L.email || "E-mail", mail, "btn-pri") + botao("phone", L.telefone || "Telefone", tel) +
+  botao("phone", "WhatsApp", L.telefone ? "https://wa.me/55" + L.telefone.replace(/\D/g, "") : "");
+$("#ano").textContent = new Date().getFullYear();
+
+/* Menu mobile */
+const nav = $("#menu"), bt = $("#menu-bt");
+bt.addEventListener("click", () => bt.setAttribute("aria-expanded", nav.classList.toggle("open")));
+nav.addEventListener("click", (e) => { if (e.target.tagName === "A") { nav.classList.remove("open"); bt.setAttribute("aria-expanded", "false"); } });
+
+/* Terminal do topo: digita um diagnóstico de rede (uma única animação) */
+const linhas = [
+  "$ ping -c 3 oportunidade.ti", "64 bytes: tempo=12ms", "64 bytes: tempo=11ms", "64 bytes: tempo=12ms",
+  "$ status --estudante", "ADS · UMC · 2026-2028", "$ aprendendo --cloud --sql --linux", "pronto para contribuir ✔"
+];
+const term = $("#term");
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) term.textContent = linhas.join("\n");
+else { let i = 0; (function next() { if (i >= linhas.length) return; term.textContent += (i ? "\n" : "") + linhas[i++]; setTimeout(next, 650); })(); }
+
+</script>
+</body>
+</html>
