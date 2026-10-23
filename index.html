@@ -44,6 +44,7 @@ nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}nav a{color:var(
 .skills,.bul,.cursos{margin:0;padding:0;list-style:none}.skills li{padding:6px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center}.skills li:last-child{border:0}
 .tag{font-size:.75rem;padding:2px 10px;border-radius:999px;white-space:nowrap;border:1px solid}
 .learn{color:#fcd34d;border-color:#fcd34d55}.dev{color:#fcd34d;border-color:#fcd34d55}.done{color:#4ade80;border-color:#4ade8055}
+.proj-acoes{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}.proj-acoes .sm{margin-top:0}
 .proj-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.proj-ico{font-size:2rem}.proj p{color:var(--mut);margin:.2rem 0 1rem}
 .chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0 0 18px;padding:0}.chips li{font-size:.8rem;background:rgba(251,146,60,.12);color:var(--ciano);padding:2px 10px;border-radius:6px}
 .tl-item{border-left:2px solid var(--ciano);padding:0 0 26px 22px}.muted{color:var(--mut);font-size:.95rem}
@@ -90,7 +91,7 @@ footer{padding:28px 0;text-align:center;color:var(--mut);border-top:1px solid va
   <p class="muted">O que já uso na prática e o que ainda estou aprendendo.</p><div class="grid" id="skills-grid"></div></div></section>
 
 <section id="projetos" class="alt"><div class="wrap"><h2>Projetos</h2>
-  <p class="muted">Projetos de estudo que estou desenvolvendo. O código será publicado no GitHub conforme eu concluir cada um.</p><div class="grid" id="projetos-grid"></div></div></section>
+  <p class="muted">Projetos que conectam meus estudos à prática em TI. Conheça o HelpDesk TI em funcionamento, explore o código e veja a apresentação no LinkedIn.</p><div class="grid" id="projetos-grid"></div></div></section>
 
 <section id="experiencia"><div class="wrap"><h2>Experiência profissional</h2><div style="margin-top:26px" id="exp-lista"></div>
   <h3 style="margin-top:20px">Habilidades que levo para a TI</h3><ul id="transf"></ul></div></section>
@@ -137,12 +138,16 @@ const DADOS = {
   ],
 
   /* Para adicionar um projeto: copie um bloco, cole ao final da lista e edite.
-     status: "Em desenvolvimento" ou "Concluído". repo: link do GitHub ("" = botão desativado). */
+     status: "Em desenvolvimento", "Publicado" ou "Concluído". repo: GitHub; demo: sistema; publicacao: LinkedIn (opcionais). */
   projetos: [
+    { titulo: "HelpDesk TI", icone: "🛠️", status: "Publicado",
+      repo: "https://github.com/KauanSts/helpdesk-ti",
+      demo: "https://helpdesk-ti-dn63.onrender.com/login",
+      publicacao: "https://www.linkedin.com/in/kauan-marcondes/overlay/1792793023681/single-media-viewer/?profileId=ACoAAG3080EBS6GjDtC3NyB6BQkk_8Nybs4rYs0",
+      descricao: "Sistema web de suporte técnico com acesso por perfil, abertura e acompanhamento de chamados, central de atendimento e gestão administrativa de usuários.",
+      tecnologias: ["Python", "Flask", "SQLite", "Render"] },
     { titulo: "Laboratório de Redes", icone: "🌐", status: "Em desenvolvimento", repo: "",
       descricao: "Endereçamento IPv4 e IPv6, subnetting e diagnóstico de conectividade.", tecnologias: ["TCP/IP", "IPv4", "IPv6"] },
-    { titulo: "Central de Suporte de TI", icone: "🛠️", status: "Em desenvolvimento", repo: "",
-      descricao: "Simulação de chamados, documentação de incidentes e soluções.", tecnologias: ["Suporte", "Documentação"] },
     { titulo: "Laboratório de Cloud Computing", icone: "☁️", status: "Em desenvolvimento", repo: "",
       descricao: "Fundamentos de infraestrutura em nuvem e máquinas virtuais.", tecnologias: ["Cloud", "VMs"] },
     { titulo: "Banco de Dados SQL", icone: "🗄️", status: "Em desenvolvimento", repo: "",
@@ -215,11 +220,15 @@ $("#skills-grid").innerHTML = D.habilidades.map((h) => `
 
 $("#projetos-grid").innerHTML = D.projetos.map((p) => `
   <article class="card proj"><div class="proj-top"><span class="proj-ico" aria-hidden="true">${p.icone}</span>
-  <span class="tag ${p.status === "Concluído" ? "done" : "dev"}">${esc(p.status)}</span></div>
+  <span class="tag ${["Concluído", "Publicado"].includes(p.status) ? "done" : "dev"}">${esc(p.status)}</span></div>
   <h3>${esc(p.titulo)}</h3><p>${esc(p.descricao)}</p>
   <ul class="chips">${p.tecnologias.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
+  <div class="proj-acoes">
+  ${p.demo ? `<a class="btn btn-pri sm" href="${esc(p.demo)}" target="_blank" rel="noopener noreferrer">Acessar sistema</a>` : ""}
   ${p.repo ? `<a class="btn btn-sec sm" href="${esc(p.repo)}" target="_blank" rel="noopener noreferrer">${ico("github")}Ver código</a>`
            : `<span class="btn btn-sec sm off" aria-disabled="true">${ico("github")}Código em breve</span>`}
+  ${p.publicacao ? `<a class="btn btn-sec sm" href="${esc(p.publicacao)}" target="_blank" rel="noopener noreferrer">${ico("linkedin")}Ver publicação no LinkedIn</a>` : ""}
+  </div>
   </article>`).join("");
 
 $("#exp-lista").innerHTML = D.experiencias.map((e) => `
