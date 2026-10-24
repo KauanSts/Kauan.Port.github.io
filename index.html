@@ -108,7 +108,7 @@ Escolha uma opção ou digite help para começar.</p></div>
 </div></section>
 
 <section id="habilidades"><div class="wrap"><h2>Habilidades</h2>
-  <p class="muted">O que já uso na prática e o que ainda estou aprendendo.</p><div class="grid" id="skills-grid"></div></div></section>
+  <p class="muted">Conhecimentos aplicados no suporte técnico, em redes e no desenvolvimento dos meus projetos.</p><div class="grid" id="skills-grid"></div></div></section>
 
 <section id="projetos" class="alt"><div class="wrap"><h2>Projetos</h2>
   <p class="muted">Projetos que conectam meus estudos à prática em TI. Conheça o HelpDesk TI em funcionamento e acompanhe o desenvolvimento do NetMonitor pelo código no GitHub.</p><div class="grid" id="projetos-grid"></div></div></section>
@@ -141,20 +141,31 @@ const DADOS = {
   },
 
   habilidades: [
-    { categoria: "Suporte técnico", itens: [
-      ["Hardware e software", "Pronto"], ["Instalação e configuração de sistemas", "Pronto"],
+    { categoria: "Suporte técnico e infraestrutura", itens: [
+      ["Suporte a usuários e atendimento de chamados", "Pronto"],
+      ["Instalação e configuração de computadores, sistemas e periféricos", "Pronto"],
+      ["Diagnóstico de hardware e software", "Pronto"],
       ["Manutenção preventiva e corretiva", "Pronto"], ["Documentação técnica", "Pronto"]] },
-    { categoria: "Redes", itens: [
-      ["Configuração básica de redes", "Pronto"], ["Diagnóstico de conectividade", "Pronto"],
-      ["Cabeamento e crimpagem", "Pronto"], ["TCP/IP, IPv4 e IPv6", "Em aprendizado"]] },
-    { categoria: "Cloud Computing", itens: [
-      ["Fundamentos de nuvem e infraestrutura", "Em aprendizado"]] },
+    { categoria: "Redes e conectividade", itens: [
+      ["Configuração básica de redes", "Pronto"],
+      ["Diagnóstico de conectividade e falhas de cabeamento", "Pronto"],
+      ["Cabeamento e crimpagem", "Pronto"], ["TCP/IP e endereçamento IPv4", "Pronto"],
+      ["Fundamentos de IPv6", "Em aprendizado"], ["Testes com ping e análise de latência", "Pronto"]] },
+    { categoria: "Programação e desenvolvimento web", itens: [
+      ["Python intermediário", "Pronto"], ["Lógica de programação", "Pronto"],
+      ["Flask", "Pronto"], ["HTML e CSS", "Pronto"],
+      ["JavaScript básico", "Pronto"], ["Java básico", "Em aprendizado"]] },
     { categoria: "Banco de dados", itens: [
-      ["SQL e consultas básicas", "Em aprendizado"]] },
-    { categoria: "Programação", itens: [
-      ["Lógica de programação", "Pronto"], ["Python (básico)", "Pronto"], ["Java (básico)", "Em aprendizado"]] },
-    { categoria: "Sistemas operacionais", itens: [
-      ["Windows", "Pronto"], ["Pacote Office", "Pronto"], ["Fundamentos de Linux", "Em aprendizado"]] }
+      ["SQLite", "Pronto"], ["Consultas SQL", "Em aprendizado"],
+      ["Cadastro, consulta, atualização e exclusão de registros", "Pronto"],
+      ["Integração de banco de dados com aplicações Flask", "Pronto"]] },
+    { categoria: "Ferramentas e publicação", itens: [
+      ["Git e GitHub", "Pronto"], ["Publicação de aplicações no Render", "Pronto"],
+      ["Ambientes virtuais Python", "Pronto"], ["Testes automatizados com unittest", "Pronto"]] },
+    { categoria: "Sistemas e fundamentos de nuvem", itens: [
+      ["Windows", "Pronto"], ["Pacote Office", "Pronto"],
+      ["Fundamentos de Linux", "Em aprendizado"],
+      ["Fundamentos de Cloud Computing e infraestrutura", "Em aprendizado"]] }
   ],
 
   /* Para adicionar um projeto: copie um bloco, cole ao final da lista e edite.
