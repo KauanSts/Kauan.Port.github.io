@@ -26,7 +26,8 @@ header{position:sticky;top:0;z-index:10;background:rgba(28,30,33,.92);backdrop-f
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
 .logo{font-weight:700;color:var(--txt);text-decoration:none}.logo b{color:var(--ciano)}
 nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}nav a{color:var(--mut);text-decoration:none;font-size:.95rem}nav a:hover{color:var(--ciano)}
-#menu-bt{display:none;background:none;border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:6px 12px;font:inherit}
+#menu-bt{display:none;align-items:center;gap:8px;min-height:44px;background:none;border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:8px 12px;font:inherit;cursor:pointer}
+.menu-icon{width:20px;height:20px;flex:none}
 .hero{padding:90px 0 70px}.hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
 .hero p.sub{color:var(--mut);font-size:1.15rem;max-width:34em}.hero .nome{color:var(--ciano);font-weight:600;margin-bottom:.8rem}
 .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
@@ -63,8 +64,8 @@ nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}nav a{color:var(
 #transf{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}#transf li{background:var(--card);border-radius:var(--r);padding:14px 16px}#transf span{display:block;color:var(--mut);font-size:.9rem}
 .cursos li,#certs li{margin-bottom:14px}.lead{max-width:44em;color:#d5e1ee}
 footer{padding:28px 0;text-align:center;color:var(--mut);border-top:1px solid var(--line);font-size:.9rem}
-@media(max-width:800px){.hero .wrap,.two{grid-template-columns:1fr}#menu-bt{display:block}
- nav ul{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--bg);padding:16px 20px;border-bottom:1px solid var(--line);gap:12px}nav.open ul{display:flex}section{padding:52px 0}}
+@media(max-width:800px){.hero .wrap,.two{grid-template-columns:1fr}#menu-bt{display:inline-flex}
+ nav ul{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--bg);padding:12px 20px;max-height:calc(100dvh - 60px);overflow-y:auto;border-bottom:1px solid var(--line);gap:4px;box-shadow:0 12px 20px rgba(0,0,0,.25)}nav.open ul{display:flex}nav a{display:flex;align-items:center;min-height:44px;padding:8px 12px;border-radius:8px}nav a:hover,nav a:focus-visible{background:var(--bg2)}section{padding:52px 0}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
 
 </style>
@@ -73,7 +74,7 @@ footer{padding:28px 0;text-align:center;color:var(--mut);border-top:1px solid va
 <a class="skip" href="#conteudo">Ir para o conteúdo</a>
 <header><div class="wrap">
   <a class="logo" href="#inicio">&lt;<b>KM</b>/&gt;</a>
-  <button id="menu-bt" aria-expanded="false" aria-controls="menu">Menu</button>
+  <button type="button" id="menu-bt" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu de navegação"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path id="menu-icon-path" d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menu</span></button>
   <nav id="menu" aria-label="Principal"><ul>
     <li><a href="#sobre">Sobre</a></li><li><a href="#habilidades">Habilidades</a></li><li><a href="#projetos">Projetos</a></li>
     <li><a href="#experiencia">Experiência</a></li><li><a href="#formacao">Formação</a></li><li><a href="#contato">Contato</a></li>
@@ -110,7 +111,7 @@ Escolha uma opção ou digite help para começar.</p></div>
   <p class="muted">O que já uso na prática e o que ainda estou aprendendo.</p><div class="grid" id="skills-grid"></div></div></section>
 
 <section id="projetos" class="alt"><div class="wrap"><h2>Projetos</h2>
-  <p class="muted">Projetos que conectam meus estudos à prática em TI. Conheça o HelpDesk TI em funcionamento, explore o código e veja a apresentação no LinkedIn.</p><div class="grid" id="projetos-grid"></div></div></section>
+  <p class="muted">Projetos que conectam meus estudos à prática em TI. Conheça o HelpDesk TI em funcionamento e acompanhe o desenvolvimento do NetMonitor pelo código no GitHub.</p><div class="grid" id="projetos-grid"></div></div></section>
 
 <section id="experiencia"><div class="wrap"><h2>Experiência profissional</h2><div style="margin-top:26px" id="exp-lista"></div>
   <h3 style="margin-top:20px">Habilidades que levo para a TI</h3><ul id="transf"></ul></div></section>
@@ -165,6 +166,10 @@ const DADOS = {
       publicacao: "https://www.linkedin.com/in/kauan-marcondes/overlay/1792793023681/single-media-viewer/?profileId=ACoAAG3080EBS6GjDtC3NyB6BQkk_8Nybs4rYs0",
       descricao: "Sistema web de suporte técnico com acesso por perfil, abertura e acompanhamento de chamados, central de atendimento e gestão administrativa de usuários.",
       tecnologias: ["Python", "Flask", "SQLite", "Render"] },
+    { titulo: "NetMonitor", icone: "📡", status: "Em desenvolvimento",
+      repo: "https://github.com/KauanSts/netmonitor", publicacaoEmBreve: true,
+      descricao: "Projeto de monitoramento de redes em Python e Flask, com verificação pontual de conectividade por ping e análise de latência para IPv4 e domínios. Cadastro de dispositivos, histórico, dashboard, SQLite e suporte a IPv6 estão planejados.",
+      tecnologias: ["Python", "Flask", "Redes", "TCP/IP", "IPv4", "IPv6 (planejado)", "SQLite (planejado)"] },
     { titulo: "Laboratório de Redes", icone: "🌐", status: "Em desenvolvimento", repo: "",
       descricao: "Endereçamento IPv4 e IPv6, subnetting e diagnóstico de conectividade.", tecnologias: ["TCP/IP", "IPv4", "IPv6"] },
     { titulo: "Laboratório de Cloud Computing", icone: "☁️", status: "Em desenvolvimento", repo: "",
@@ -246,7 +251,7 @@ $("#projetos-grid").innerHTML = D.projetos.map((p) => `
   ${p.demo ? `<a class="btn btn-pri sm" href="${esc(p.demo)}" target="_blank" rel="noopener noreferrer">Acessar sistema</a>` : ""}
   ${p.repo ? `<a class="btn btn-sec sm" href="${esc(p.repo)}" target="_blank" rel="noopener noreferrer">${ico("github")}Ver código</a>`
            : `<span class="btn btn-sec sm off" aria-disabled="true">${ico("github")}Código em breve</span>`}
-  ${p.publicacao ? `<a class="btn btn-sec sm" href="${esc(p.publicacao)}" target="_blank" rel="noopener noreferrer">${ico("linkedin")}Ver publicação no LinkedIn</a>` : ""}
+  ${p.publicacao ? `<a class="btn btn-sec sm" href="${esc(p.publicacao)}" target="_blank" rel="noopener noreferrer">${ico("linkedin")}Ver publicação no LinkedIn</a>` : p.publicacaoEmBreve ? `<span class="btn btn-sec sm off" aria-disabled="true">${ico("linkedin")}Publicação no LinkedIn — Em breve</span>` : ""}
   </div>
   </article>`).join("");
 
@@ -270,8 +275,30 @@ $("#ano").textContent = new Date().getFullYear();
 
 /* Menu mobile */
 const nav = $("#menu"), bt = $("#menu-bt");
-bt.addEventListener("click", () => bt.setAttribute("aria-expanded", nav.classList.toggle("open")));
-nav.addEventListener("click", (e) => { if (e.target.tagName === "A") { nav.classList.remove("open"); bt.setAttribute("aria-expanded", "false"); } });
+const mobile = matchMedia("(max-width: 800px)");
+function definirMenu(aberto) {
+  nav.classList.toggle("open", aberto);
+  bt.setAttribute("aria-expanded", String(aberto));
+  bt.setAttribute("aria-label", aberto ? "Fechar menu de navegação" : "Abrir menu de navegação");
+  $("#menu-icon-path").setAttribute("d", aberto ? "M6 6l12 12M6 18L18 6" : "M4 6h16M4 12h16M4 18h16");
+}
+bt.addEventListener("click", () => definirMenu(!nav.classList.contains("open")));
+nav.addEventListener("click", e => { if (e.target.closest("a")) definirMenu(false); });
+document.addEventListener("click", e => {
+  if (nav.classList.contains("open") && !nav.contains(e.target) && !bt.contains(e.target)) definirMenu(false);
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && nav.classList.contains("open")) { definirMenu(false); bt.focus(); }
+});
+$("header").addEventListener("focusout", e => {
+  if (mobile.matches && !$("header").contains(e.relatedTarget)) definirMenu(false);
+});
+mobile.addEventListener("change", () => {
+  const focoOculto = !mobile.matches && document.activeElement === bt;
+  definirMenu(false);
+  if (focoOculto) nav.querySelector("a").focus();
+  else if (mobile.matches && nav.contains(document.activeElement)) bt.focus();
+});
 
 /* Terminal local: respostas baseadas nos dados do portfólio. */
 const term = $("#term"), entrada = $("#term-input");
